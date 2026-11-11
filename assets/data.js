@@ -3,29 +3,16 @@
    "The Art of Statistics: Learning from Data" (Pelican, 2019).
    Placeholders: {P} population, {X} exposure/intervention, {C} comparison, {Y} outcome. */
 
-const GOALS = [
-  { id: "all", label: "Show every design" },
-  { id: "describe", label: "Describe a population" },
-  { id: "associate", label: "Find what goes with what" },
-  { id: "cause", label: "Test whether X causes Y" },
-  { id: "predict", label: "Predict individual cases" },
-  { id: "combine", label: "Combine existing studies" }
-];
-
-const FAMILIES = {
-  experiment: "Experiments: you decide who gets what",
-  observe: "Observational designs: you watch what happens",
-  synth: "Synthesis and modelling: you work with data in hand"
-};
-
 const PRESETS = [
-  { label: "Statins and heart attacks (book)",
+  { label: "🍎 School breakfast",
+    P: "primary school children", X: "a free school breakfast", C: "no breakfast at school", Y: "their reading scores" },
+  { label: "💊 Statins and heart attacks",
     P: "adults at raised risk of heart attack or stroke", X: "a daily statin", C: "a placebo",
     Y: "the risk of a heart attack within five years" },
-  { label: "Study-supporter texts (book)",
+  { label: "📱 Study-supporter texts",
     P: "students retaking GCSE maths or English", X: "a nominated study supporter who receives encouraging texts",
     C: "no study supporter", Y: "the pass rate" },
-  { label: "Energy audits in small factories",
+  { label: "🏭 Factory energy audits",
     P: "small textile factories", X: "a subsidised energy audit", C: "no audit",
     Y: "electricity use per unit of output" }
 ];
