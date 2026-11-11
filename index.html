@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research methods, visualised</title>
+<meta name="description" content="Pick a research design and see what it needs, how the research question and hypotheses look, and a worked example, drawing on Spiegelhalter's The Art of Statistics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#sheet">Skip to the selected design</a>
+
+<header class="top">
+  <a class="brand" href="#choose">Research methods, visualised</a>
+  <nav aria-label="Sections">
+    <a href="#choose">Designs</a>
+    <a href="#numbers">Try the numbers</a>
+    <a href="#claims">Judge a claim</a>
+  </nav>
+</header>
+
+<main>
+  <section id="choose" class="choose">
+    <h1>What are you trying to find out?</h1>
+    <p class="lede">Every study design answers one kind of question well and others badly. Pick your aim, then open a design to see its diagram, what it needs, how its research question and hypotheses are written, and a worked example.</p>
+    <div class="goals" id="goals" role="group" aria-label="Filter designs by aim"></div>
+    <div id="tiles"></div>
+  </section>
+
+  <section id="sheet" class="sheet" aria-live="polite"></section>
+
+  <section id="numbers" class="tools">
+    <h2>Try the numbers</h2>
+    <p class="lede">Two small calculators for ideas that come up in almost every design: how sample size decides what you can detect, and how the same result sounds different depending on how it is expressed.</p>
+
+    <div class="tool" id="sim">
+      <h3>How big does a trial need to be?</h3>
+      <p>Set the true risks, choose a size, and run the trial. Small trials bounce around; the Heart Protection Study used about 10,000 people per arm for a reason.</p>
+      <div class="controls">
+        <label>True risk in control group, %<input type="number" id="simC" value="11.8" min="0.1" max="99" step="0.1"></label>
+        <label>True risk with the intervention, %<input type="number" id="simT" value="8.7" min="0.1" max="99" step="0.1"></label>
+        <label>People per arm: <output id="simNout">200</output><input type="range" id="simN" min="0" max="7" step="1" value="2"></label>
+      </div>
+      <div class="btns">
+        <button type="button" id="simOne">Run one trial</button>
+        <button type="button" id="simMany" class="ghost">Run 1,000 trials</button>
+      </div>
+      <div id="simOut" class="out"><p class="hint">Run a trial to see one possible result. Run it again and it will differ, even though the truth has not changed.</p></div>
+    </div>
+
+    <div class="tool" id="eff">
+      <h3>One result, four ways to say it</h3>
+      <p>Relative risks make headlines. Absolute risks tell you what to expect out of 100 people.</p>
+      <div class="btns" id="effPresets"></div>
+      <div class="controls">
+        <label>Risk in comparison group, %<input type="number" id="effC" value="6" min="0.1" max="99.9" step="0.1"></label>
+        <label>Risk in exposed group, %<input type="number" id="effX" value="7" min="0.1" max="99.9" step="0.1"></label>
+      </div>
+      <div id="effOut" class="out"></div>
+    </div>
+  </section>
+
+  <section id="claims" class="claims">
+    <h2>Ten questions to put to any statistical claim</h2>
+    <p class="lede">Whatever the design, a finding still has to survive these. Paraphrased from the checklist that closes the book.</p>
+    <div id="tenq" class="tenq"></div>
+  </section>
+</main>
+
+<footer>
+  <p>Examples, figures and the Problem, Plan, Data, Analysis, Conclusion cycle follow David Spiegelhalter, <cite>The Art of Statistics: Learning from Data</cite> (Pelican, 2019). Chapter references appear with each example. Diagrams are schematic unless real figures are shown.</p>
+  <p>The book concentrates on quantitative designs, so qualitative methods such as interviews and case studies are not covered here.</p>
+</footer>
+
+<script src="assets/data.js"></script>
+<script src="assets/diagrams.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
